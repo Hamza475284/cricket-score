@@ -3,126 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Cricket Scores</title>
+    <title>Cricket Live Scores</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
+        /* General Reset */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
+
+        /* Body Style */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Style */
         header {
-            text-align: center;
-            background-color: #0275d8;
+            background: #0288d1;
             color: white;
-            padding: 20px;
-        }
-        header h1 {
-            font-size: 28px;
-            margin: 0;
-        }
-        nav {
-            background-color: #0056b3;
+            padding: 20px 0;
             text-align: center;
-            padding: 10px;
         }
+
+        header h1 {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: #0277bd;
+            padding: 10px 0;
+            text-align: center;
+        }
+
         nav a {
             color: white;
-            margin: 0 15px;
             text-decoration: none;
-            font-size: 16px;
+            margin: 0 15px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s;
         }
+
         nav a:hover {
-            text-decoration: underline;
+            color: #ffca28;
         }
+
+        /* Main Content */
         .container {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 20px auto;
             padding: 20px;
             background: white;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         .section {
             margin-bottom: 30px;
         }
+
         .section h2 {
-            font-size: 20px;
-            color: #0275d8;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #0275d8;
+            color: #0288d1;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #0288d1;
             padding-bottom: 5px;
         }
-        iframe {
-            width: 100%;
-            border: none;
-            border-radius: 5px;
-            overflow: hidden;
+
+        .match {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #fafafa;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
         }
+
+        .match:hover {
+            transform: scale(1.02);
+        }
+
+        .match h3 {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .match p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .btn {
+            background: #0288d1;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #026fa4;
+        }
+
+        /* Footer */
         footer {
-            background-color: #0056b3;
+            background: #0277bd;
             color: white;
             text-align: center;
-            padding: 15px;
-            font-size: 14px;
+            padding: 10px 0;
             margin-top: 20px;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
+    <!-- Header -->
     <header>
-        <h1>Live Cricket Scores</h1>
+        <h1>Cricket Live Scores</h1>
     </header>
 
-    <!-- Navigation Section -->
+    <!-- Navigation -->
     <nav>
-        <a href="#live">Live Scores</a>
-        <a href="#upcoming">Upcoming Matches</a>
-        <a href="#completed">Completed Matches</a>
+        <a href="#live-matches">Live Scores</a>
+        <a href="#upcoming-matches">Upcoming Matches</a>
+        <a href="#completed-matches">Completed Matches</a>
     </nav>
 
-    <!-- Main Container -->
+    <!-- Main Content -->
     <div class="container">
         <!-- Live Matches Section -->
-        <div class="section" id="live">
+        <div class="section" id="live-matches">
             <h2>Live Matches</h2>
-            <iframe 
-                src="https://www.cricbuzz.com/widgets/live-cricket-score-widget" 
-                frameborder="0" 
-                scrolling="no" 
-                height="400px">
-            </iframe>
+            <div id="liveScores">Loading live matches...</div>
         </div>
 
         <!-- Upcoming Matches Section -->
-        <div class="section" id="upcoming">
+        <div class="section" id="upcoming-matches">
             <h2>Upcoming Matches</h2>
-            <iframe 
-                src="https://www.cricbuzz.com/widgets/schedule-widget" 
-                frameborder="0" 
-                scrolling="no" 
-                height="400px">
-            </iframe>
+            <div id="upcomingScores">Loading upcoming matches...</div>
         </div>
 
         <!-- Completed Matches Section -->
-        <div class="section" id="completed">
+        <div class="section" id="completed-matches">
             <h2>Completed Matches</h2>
-            <iframe 
-                src="https://www.cricbuzz.com/widgets/results-widget" 
-                frameborder="0" 
-                scrolling="no" 
-                height="400px">
-            </iframe>
+            <div id="completedScores">Loading completed matches...</div>
         </div>
     </div>
 
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer>
-        &copy; 2024 Live Cricket Scores | Powered by Cricbuzz
+        &copy; 2024 Cricket Live Scores | Powered by Cricket Data API
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+        const API_KEY = "d2024aa8-8edd-492c-8013-a5ef55109c89"; // Your Cricket Data API key
+
+        // Function to fetch matches
+        async function fetchMatches(status, containerId) {
+            const API_URL = `https://api.cricketdata.org/v1/matches?status=${status}&apikey=${API_KEY}`;
+            const container = document.getElementById(containerId);
+
+            try {
+                const response = await fetch(API_URL);
+                const data = await response.json();
+
+                if (data.length > 0) {
+                    const matches = data.map(match => `
+                        <div class="match">
+                            <div>
+                                <h3>${match.name}</h3>
+                                <p><strong>Status:</strong> ${match.status}</p>
+                                <p><strong>Score:</strong> ${match.score || "N/A"}</p>
+                            </div>
+                            <a href="#" class="btn">Details</a>
+                        </div>
+                    `).join("");
+                    container.innerHTML = matches;
+                } else {
+                    container.innerHTML = "<p>No matches available.</p>";
+                }
+            } catch (error) {
+                console.error("Error fetching matches:", error);
+                container.innerHTML = "<p>Failed to load matches.</p>";
+            }
+        }
+
+        // Fetch live, upcoming, and completed matches
+        fetchMatches("live", "liveScores");
+        fetchMatches("upcoming", "upcomingScores");
+        fetchMatches("completed", "completedScores");
+    </script>
 </body>
 </html>
-
