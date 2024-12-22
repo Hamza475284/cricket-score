@@ -53,14 +53,12 @@
             border-bottom: 2px solid #0275d8;
             padding-bottom: 5px;
         }
-        .placeholder {
-            height: 400px;
-            text-align: center;
-            line-height: 400px;
-            border: 1px solid #ddd;
-            background-color: #f9f9f9;
-            color: #555;
-            font-size: 16px;
+        iframe {
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         footer {
             background-color: #0056b3;
@@ -90,25 +88,41 @@
         <!-- Live Matches Section -->
         <div class="section" id="live">
             <h2>Live Matches</h2>
-            <div class="placeholder">Live Matches Widget Placeholder</div>
+            <iframe 
+                src="https://www.cricbuzz.com/widgets/live-cricket-score-widget" 
+                frameborder="0" 
+                scrolling="no" 
+                height="400px">
+            </iframe>
         </div>
 
         <!-- Upcoming Matches Section -->
         <div class="section" id="upcoming">
             <h2>Upcoming Matches</h2>
-            <div class="placeholder">Upcoming Matches Widget Placeholder</div>
+            <iframe 
+                src="https://www.cricbuzz.com/widgets/schedule-widget" 
+                frameborder="0" 
+                scrolling="no" 
+                height="400px">
+            </iframe>
         </div>
 
         <!-- Completed Matches Section -->
         <div class="section" id="completed">
             <h2>Completed Matches</h2>
-            <div class="placeholder">Completed Matches Widget Placeholder</div>
+            <iframe 
+                src="https://www.cricbuzz.com/widgets/results-widget" 
+                frameborder="0" 
+                scrolling="no" 
+                height="400px">
+            </iframe>
         </div>
     </div>
 
     <!-- Footer Section -->
     <footer>
-        &copy; 2024 Live Cricket Scores | Powered by Your Website
+        &copy; 2024 Live Cricket Scores | Powered by Cricbuzz
     </footer>
 </body>
 </html>
+
