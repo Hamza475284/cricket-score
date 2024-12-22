@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Cricket Scores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            background-color: #0275d8;
+            color: white;
+            padding: 20px;
+        }
+        header h1 {
+            font-size: 28px;
+            margin: 0;
+        }
+        nav {
+            background-color: #0056b3;
+            text-align: center;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section h2 {
+            font-size: 20px;
+            color: #0275d8;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #0275d8;
+            padding-bottom: 5px;
+        }
+        .placeholder {
+            height: 400px;
+            text-align: center;
+            line-height: 400px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            color: #555;
+            font-size: 16px;
+        }
+        footer {
+            background-color: #0056b3;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Live Cricket Scores</h1>
+    </header>
+
+    <!-- Navigation Section -->
+    <nav>
+        <a href="#live">Live Scores</a>
+        <a href="#upcoming">Upcoming Matches</a>
+        <a href="#completed">Completed Matches</a>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Live Matches Section -->
+        <div class="section" id="live">
+            <h2>Live Matches</h2>
+            <div class="placeholder">Live Matches Widget Placeholder</div>
+        </div>
+
+        <!-- Upcoming Matches Section -->
+        <div class="section" id="upcoming">
+            <h2>Upcoming Matches</h2>
+            <div class="placeholder">Upcoming Matches Widget Placeholder</div>
+        </div>
+
+        <!-- Completed Matches Section -->
+        <div class="section" id="completed">
+            <h2>Completed Matches</h2>
+            <div class="placeholder">Completed Matches Widget Placeholder</div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        &copy; 2024 Live Cricket Scores | Powered by Your Website
+    </footer>
+</body>
+</html>
