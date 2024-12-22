@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Cricket Scores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        header {
+            background-color: #0275d8;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 15px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section h2 {
+            font-size: 20px;
+            color: #0275d8;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #0275d8;
+            padding-bottom: 5px;
+        }
+        iframe {
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #0275d8;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Live Cricket Scores</h1>
+    </header>
+
+    <div class="container">
+        <div class="section">
+            <h2>Live Cricket Scores</h2>
+            <iframe 
+                src="https://www.espncricinfo.com/live-cricket-score" 
+                frameborder="0" 
+                scrolling="no" 
+                width="100%" 
+                height="400px">
+            </iframe>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Live Cricket Scores | Powered by ESPN
+    </footer>
+</body>
+</html>
